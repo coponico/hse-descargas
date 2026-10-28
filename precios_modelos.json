@@ -1,0 +1,59 @@
+{
+  "updated": "2026-10-28",
+  "source": "OpenAI: tabla de Localify (referencia). Anthropic, Gemini y DeepSeek: páginas oficiales de precios consultadas el 2026-10-28 (platform.claude.com/docs/en/about-claude/pricing, ai.google.dev/gemini-api/docs/pricing, api-docs.deepseek.com/quick_start/pricing).",
+  "speed_note": "speed (fast | medium | slow) es una estimación relativa entre modelos; los proveedores no la publican.",
+  "note": "El modelo predeterminado de cada proveedor es su más barato con quality = good. Los más caros son una elección consciente.",
+  "provider_notes": {
+    "anthropic": "Claude Haiku 5.5 cobra más en prompts de más de 100.000 tokens (0,50 / 2,50); los lotes de traducción quedan muy por debajo. reasoning_effort va a output_config.effort.",
+    "gemini": "Precio que rige desde 2026-12-01 (gemini-4-argon; hasta entonces 2 / 0,10 / 10) y desde 2027-01-01 (gemini-3.8-flash; hasta entonces 0,75 / 0,075 / 3,75). reasoning_effort va a thinkingConfig.thinkingLevel.",
+    "deepseek": "Precio de hora pico; fuera de pico (lun-vie fuera de 01-04 y 06-10 UTC, y fines de semana) cuesta la mitad. Se traduce con el razonamiento apagado."
+  },
+  "currency": "USD",
+  "per_tokens": 1000000,
+  "models": {
+    "gpt-6.1-sol": {
+      "provider": "openai", "label": "GPT-6.1 Sol", "input": 2.00, "cached_input": 0.10, "output": 10.00,
+      "reasoning_effort": "low", "think": 0.3, "quality": "good", "speed": "medium"
+    },
+    "gpt-6-luna": {
+      "provider": "openai", "label": "GPT-6 Luna", "input": 0.10, "cached_input": 0.01, "output": 0.50,
+      "reasoning_effort": "low", "think": 0.3, "quality": "good", "speed": "fast"
+    },
+    "gpt-6-astra": {
+      "provider": "openai", "label": "GPT-6 Astra", "input": 10.00, "cached_input": 1.00, "output": 50.00,
+      "reasoning_effort": "low", "think": 0.3, "quality": "good", "speed": "slow"
+    },
+    "claude-haiku-5-5": {
+      "provider": "anthropic", "label": "Claude Haiku 5.5", "input": 0.10, "cached_input": 0.01, "output": 0.50,
+      "reasoning_effort": "low", "think": 0.3, "quality": "good", "speed": "fast"
+    },
+    "claude-sonnet-5-5": {
+      "provider": "anthropic", "label": "Claude Sonnet 5.5", "input": 2.00, "cached_input": 0.10, "output": 10.00,
+      "reasoning_effort": "low", "think": 0.3, "quality": "good", "speed": "medium"
+    },
+    "claude-opus-5-5": {
+      "provider": "anthropic", "label": "Claude Opus 5.5", "input": 4.00, "cached_input": 0.20, "output": 20.00,
+      "reasoning_effort": "low", "think": 0.3, "quality": "good", "speed": "slow"
+    },
+    "gemini-3.5-flash-lite": {
+      "provider": "gemini", "label": "Gemini 3.5 Flash-Lite", "input": 0.30, "cached_input": 0.03, "output": 2.50,
+      "reasoning_effort": "minimal", "think": 0.1, "quality": "good", "speed": "fast"
+    },
+    "gemini-3.8-flash": {
+      "provider": "gemini", "label": "Gemini 3.8 Flash", "input": 1.50, "cached_input": 0.15, "output": 7.50,
+      "reasoning_effort": "low", "think": 0.3, "quality": "good", "speed": "medium"
+    },
+    "gemini-4-argon": {
+      "provider": "gemini", "label": "Gemini 4 Argon", "input": 4.00, "cached_input": 0.20, "output": 20.00,
+      "reasoning_effort": "low", "think": 0.3, "quality": "good", "speed": "slow"
+    },
+    "deepseek-flash": {
+      "provider": "deepseek", "label": "DeepSeek Flash", "input": 0.30, "cached_input": 0.006, "output": 1.20,
+      "think": 0.0, "quality": "good", "speed": "fast"
+    },
+    "deepseek-v4-pro": {
+      "provider": "deepseek", "label": "DeepSeek V4 Pro", "input": 1.32, "cached_input": 0.044, "output": 3.96,
+      "think": 0.0, "quality": "good", "speed": "medium"
+    }
+  }
+}
