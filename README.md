@@ -34,6 +34,20 @@ Y mientras traduce, ves el avance y lo gastado:
 
 <img src="capturas/20-progreso.png" alt="Pantalla de progreso de la traducción con barra, productos completos, gasto y tiempo" width="640">
 
+### Modo económico
+Cuando traduces un catálogo grande con OpenAI, Anthropic o Gemini, puedes elegir el **modo económico**:
+
+- **Cuesta la mitad** que el modo normal.
+- **Puede tardar hasta 24 horas.**
+- **Puedes cerrar la app y volver**: al abrirla te muestra cómo va el trabajo.
+- No aparece en catálogos chicos ni con DeepSeek.
+
+<img src="capturas/18b-confirmar-economico.png" alt="Pantalla de confirmación con las dos opciones, normal y económico, y el botón Enviar lote económico" width="640">
+
+<img src="capturas/26-lote-enviado.png" alt="Pantalla de lote enviado con el estado y el plazo" width="640">
+
+<img src="capturas/27-trabajo-en-curso.png" alt="Pantalla inicial con el aviso de trabajo en curso" width="640">
+
 ### 4. Guarda el CSV e impórtalo en Shopify
 Elige la carpeta, genera el archivo y súbelo en tu tienda: **Productos → Importar**.
 
@@ -50,6 +64,36 @@ Elige la carpeta, genera el archivo y súbelo en tu tienda: **Productos → Impo
 
 **¿Aparece «Windows protegió tu PC»?** Haz clic en **Más información** y luego en **Ejecutar de todas formas**.
 Pasa porque la app no tiene un certificado de pago (es lo que Windows usa para reconocer programas conocidos). Es normal y solo se pide la primera vez.
+
+### Si Windows 11 bloquea la app
+
+Del caso más simple al más delicado:
+
+**1. Pantalla azul «Windows protegió tu PC» (SmartScreen).**
+Haz clic en **Más información** y luego en **Ejecutar de todas formas**.
+
+**2. El archivo aparece bloqueado.**
+Clic derecho en **HSE-Catalogo.exe** → **Propiedades** → marca **Desbloquear** (abajo, en la pestaña General) → **Aceptar**.
+
+**3. Windows dice que la app fue bloqueada y no ofrece ninguna opción para continuar.**
+Eso es **Smart App Control**, una protección de Windows 11 que bloquea las apps sin firma digital. Suele venir activada en instalaciones nuevas de Windows 11.
+
+¿Por qué pasa? La app es gratuita y todavía no tiene un certificado de firma de pago. La app no hace nada peligroso: solo lee catálogos públicos y guarda archivos donde tú le indicas.
+
+Para poder abrirla hay que desactivar Smart App Control:
+
+1. Abre **Seguridad de Windows**.
+2. Entra a **Control de aplicaciones y navegador**.
+3. Pulsa **Configuración de Smart App Control**.
+4. Elige **Desactivado**.
+
+(También puedes llegar desde **Configuración → Privacidad y seguridad → Seguridad de Windows**.)
+
+> ⚠️ **Antes de hacerlo, ten esto claro:**
+> - Es una decisión de seguridad de tu equipo. **No es algo que todos deban hacer.**
+> - Según Microsoft, en versiones recientes de Windows 11 se puede volver a activar desde el mismo lugar; en otras versiones puede ser necesario restablecer o reinstalar Windows. No cuentes con poder volver atrás fácilmente.
+> - Las demás protecciones (Microsoft Defender y SmartScreen) siguen activas.
+> - Hazlo solo si estás de acuerdo. Si prefieres no hacerlo, puedes usar la app en otra computadora (por ejemplo, una con Windows 10 o una Mac).
 
 ## Instalación en Mac
 
