@@ -6,8 +6,15 @@
 
 <p align="center"><sub>Windows 10/11 · Mac con chip Apple Silicon</sub></p>
 
+<a id="indice"></a>
+
+<p align="center">
+<a href="#quehace">Qué hace</a> · <a href="#comofunciona">Cómo funciona</a> · <a href="#acceso">Acceso con código</a> · <a href="#windows">Instalar en Windows</a> · <a href="#mac">Instalar en Mac</a> · <a href="#conectaria">Conectar tu IA</a> · <a href="#problemas">Problemas comunes</a> · <a href="#preguntas">Preguntas frecuentes</a>
+</p>
+
 <p align="center"><img src="imagenes/separador.png" alt="Separador" width="800"></p>
 
+<a id="quehace"></a>
 <p align="center"><img src="imagenes/titulo-que-hace.png" alt="Título: Qué hace" width="800"></p>
 
 - 📦 **Copia catálogos** de una tienda, una colección o un producto a un CSV listo para Shopify.
@@ -17,8 +24,11 @@
 
 La app irá sumando más funciones con el tiempo y te avisa cuando hay una versión nueva.
 
+<p align="center"><a href="#indice">⬆️ Volver al índice</a></p>
+
 <p align="center"><img src="imagenes/separador.png" alt="Separador" width="800"></p>
 
+<a id="comofunciona"></a>
 <p align="center"><img src="imagenes/titulo-como-funciona.png" alt="Título: Cómo funciona" width="800"></p>
 
 ### 1️⃣ Pega la URL de la tienda
@@ -46,8 +56,11 @@ Antes de empezar ves una **estimación en rango** (mínimo, probable y máximo).
 
 <p align="center"><img src="capturas/18-confirmar.png" alt="Pantalla con el costo estimado mínimo, probable y máximo, y las opciones normal y económico" width="800"></p>
 
+<p align="center"><a href="#indice">⬆️ Volver al índice</a></p>
+
 <p align="center"><img src="imagenes/separador.png" alt="Separador" width="800"></p>
 
+<a id="acceso"></a>
 <p align="center"><img src="imagenes/titulo-acceso.png" alt="Título: Acceso con código" width="800"></p>
 
 Para usar la app necesitas tu **código personal**.
@@ -70,28 +83,30 @@ Para usar la app necesitas tu **código personal**.
 - 🔒 **Privacidad:** se registra un identificador anónimo de tu computadora para limitar el uso de tu código a 2 equipos.
 - 🤖 El bot de Discord figura como «desconectado», pero **funciona igual**.
 
+<p align="center"><a href="#indice">⬆️ Volver al índice</a></p>
+
 <p align="center"><img src="imagenes/separador.png" alt="Separador" width="800"></p>
 
 > [!WARNING]
 > **⚠️ ¿Windows o Mac bloquean la app? Es normal: la app es gratuita y todavía no tiene certificado de firma de pago. Abre tu sistema aquí abajo.**
 
-<details>
-<summary><img src="imagenes/instalar-windows.png" alt="Desplegable: instalar en Windows" width="800"></summary>
+<a id="windows"></a>
+<p align="center"><img src="imagenes/instalar-windows.png" alt="Título: Instalar en Windows" width="800"></p>
 
-<br>
+### Qué necesitas
+Windows 10 u 11 de 64 bits.
 
-**Necesitas:** Windows 10 u 11 de 64 bits.
-
+### Pasos
 1. Entra a la [última versión](https://github.com/coponico/hse-descargas/releases/latest) y descarga **HSE-Catalogo.exe**.
 2. Ábrelo con doble clic.
 
-#### 🟢 Si aparece «Windows protegió tu PC» (SmartScreen)
+### 🟢 Si aparece «Windows protegió tu PC» (SmartScreen)
 Haz clic en **Más información** y luego en **Ejecutar de todas formas**. Pasa porque la app no tiene un certificado de pago. Solo se pide la primera vez.
 
-#### 🟡 Si el archivo aparece bloqueado
+### 🟡 Si el archivo aparece bloqueado
 Clic derecho en **HSE-Catalogo.exe** → **Propiedades** → marca **Desbloquear** (abajo, en la pestaña General) → **Aceptar**.
 
-#### 🔴 Si Windows 11 dice que la app fue bloqueada y no ofrece ninguna opción
+### 🔴 Si Windows 11 dice que la app fue bloqueada y no ofrece ninguna opción
 Eso es **Smart App Control**, una protección de Windows 11 que bloquea las apps sin firma digital. Suele venir activada en instalaciones nuevas.
 
 **¿Por qué pasa?** La app es gratuita y todavía no tiene un certificado de firma de pago. La app no hace nada peligroso: solo lee catálogos públicos y guarda archivos donde tú le indicas.
@@ -110,33 +125,55 @@ Para poder abrirla hay que desactivar Smart App Control:
 > - Las demás protecciones (Microsoft Defender y SmartScreen) siguen activas.
 > - Hazlo solo si estás de acuerdo. Si prefieres no hacerlo, puedes usar la app en otra computadora (por ejemplo, una con Windows 10 o una Mac).
 
-</details>
+<p align="center"><a href="#indice">⬆️ Volver al índice</a></p>
 
-<details>
-<summary><img src="imagenes/instalar-mac.png" alt="Desplegable: instalar en Mac" width="800"></summary>
+<p align="center"><img src="imagenes/separador.png" alt="Separador" width="800"></p>
 
-<br>
+<a id="mac"></a>
+<p align="center"><img src="imagenes/instalar-mac.png" alt="Título: Instalar en Mac" width="800"></p>
 
-**Necesitas:** una Mac con chip Apple Silicon (M1 o posterior). Las Mac Intel no están soportadas.
+### Qué necesitas
+Una Mac con chip Apple Silicon (M1 o posterior). Las Mac Intel no están soportadas.
 
+### Pasos
 1. Entra a la [última versión](https://github.com/coponico/hse-descargas/releases/latest) y descarga **HSE-Catalogo-mac.zip**.
 2. Haz doble clic para descomprimirlo.
 3. Arrastra **HSE Catalogo** a la carpeta **Aplicaciones**.
 4. La primera vez, ábrelo con **clic derecho → Abrir**.
 
-Si la Mac no te deja abrirla: ve a **Ajustes del Sistema → Privacidad y seguridad** y pulsa **Abrir igualmente**.
+### Si la Mac no te deja abrirla
+Ve a **Ajustes del Sistema → Privacidad y seguridad** y pulsa **Abrir igualmente**.
 
 **¿Por qué pasa?** La app no está firmada con una cuenta de desarrollador de Apple, que es de pago. Es normal y solo se pide la primera vez.
 
-</details>
+<p align="center"><a href="#indice">⬆️ Volver al índice</a></p>
 
-<details>
-<summary><img src="imagenes/titulo-problemas.png" alt="Desplegable: problemas comunes" width="800"></summary>
+<p align="center"><img src="imagenes/separador.png" alt="Separador" width="800"></p>
 
-<br>
+<a id="conectaria"></a>
+<h2 align="center">🔑 Conectar tu IA</h2>
+
+Para traducir, la app usa **tu propia API key**. Funciona con **OpenAI**, **Anthropic (Claude)**, **Gemini** y **DeepSeek** (este último, poco recomendado).
+
+1. Abre **Conectar IA** (arriba a la derecha) y elige tu proveedor.
+2. Pega tu key y pulsa **Guardar**.
+3. Pulsa **Probar key** para comprobar que funciona.
+
+La app trae una **guía por proveedor** para sacar la key y cargar crédito (botón **¿Cómo obtengo mi API key?**).
+
+<p align="center"><img src="capturas/10-conectar-ia.png" alt="Pantalla Conectar IA con la lista de proveedores y el campo para pegar la API key" width="800"></p>
+
+> 🔒 **Tu key se guarda de forma segura en tu computadora y nunca se comparte.**
+
+<p align="center"><a href="#indice">⬆️ Volver al índice</a></p>
+
+<p align="center"><img src="imagenes/separador.png" alt="Separador" width="800"></p>
+
+<a id="problemas"></a>
+<p align="center"><img src="imagenes/titulo-problemas.png" alt="Título: Problemas comunes" width="800"></p>
 
 **La app no abre.**
-Revisa los requisitos y sigue los pasos de tu sistema en los desplegables de arriba.
+Revisa los requisitos y sigue los pasos de tu sistema en las secciones de instalación.
 
 **Dice «Ese código no es válido».**
 Revisa que lo copiaste completo, con el formato `HS-XXXX-XXXX-XXXX`.
@@ -165,26 +202,11 @@ Abre la app: te ofrece **Continuar** el trabajo sin terminar. Lo ya traducido no
 **¿Dónde se guarda lo copiado?**
 En la carpeta que elijas en el último paso (por ejemplo, Documentos), como un archivo CSV.
 
-</details>
+<p align="center"><a href="#indice">⬆️ Volver al índice</a></p>
 
 <p align="center"><img src="imagenes/separador.png" alt="Separador" width="800"></p>
 
-<h2 align="center">🔑 Conectar tu IA</h2>
-
-Para traducir, la app usa **tu propia API key**. Funciona con **OpenAI**, **Anthropic (Claude)**, **Gemini** y **DeepSeek** (este último, poco recomendado).
-
-1. Abre **Conectar IA** (arriba a la derecha) y elige tu proveedor.
-2. Pega tu key y pulsa **Guardar**.
-3. Pulsa **Probar key** para comprobar que funciona.
-
-La app trae una **guía por proveedor** para sacar la key y cargar crédito (botón **¿Cómo obtengo mi API key?**).
-
-<p align="center"><img src="capturas/10-conectar-ia.png" alt="Pantalla Conectar IA con la lista de proveedores y el campo para pegar la API key" width="800"></p>
-
-> 🔒 **Tu key se guarda de forma segura en tu computadora y nunca se comparte.**
-
-<p align="center"><img src="imagenes/separador.png" alt="Separador" width="800"></p>
-
+<a id="preguntas"></a>
 <p align="center"><img src="imagenes/titulo-preguntas.png" alt="Título: Preguntas frecuentes" width="800"></p>
 
 **¿Cuánto cuesta traducir?**
@@ -201,6 +223,8 @@ No. Tu clave se guarda en tu computadora y solo viaja al proveedor de IA que eli
 
 **¿Cómo me actualizo?**
 La app avisa sola cuando hay una versión nueva. En **Windows** se actualiza al reiniciarla. En **Mac** debes reemplazarla a mano: descarga la nueva y arrástrala a Aplicaciones.
+
+<p align="center"><a href="#indice">⬆️ Volver al índice</a></p>
 
 <p align="center"><img src="imagenes/separador.png" alt="Separador" width="800"></p>
 
