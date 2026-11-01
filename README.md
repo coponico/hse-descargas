@@ -171,22 +171,29 @@ Windows 10 u 11 de 64 bits.
 
 <a id="consola-windows"></a>
 ### ⌨️ Instalar por consola (opcional)
-No hace falta instalar nada extra: usa **Windows PowerShell**, que ya viene con Windows 10 y 11. Abre el menú Inicio, escribe **PowerShell**, ábrelo y pega esto:
+No hace falta instalar nada extra: usa **Windows PowerShell**, que ya viene con Windows 10 y 11. Abre el menú Inicio, escribe **PowerShell** y ábrelo. Pega cada bloque completo y pulsa Enter.
+
+**1. Descargar la última versión** a tu carpeta Descargas:
 
 ```powershell
-# 1) Descargar la última versión a tu carpeta Descargas
 $ProgressPreference = 'SilentlyContinue'
 $base = "https://github.com/coponico/hse-descargas/releases/latest/download"
 $exe  = "$env:USERPROFILE\Downloads\HSE-Catalogo.exe"
 Invoke-WebRequest "$base/HSE-Catalogo.exe" -OutFile $exe
+```
 
-# 2) Verificar el SHA-256 (opcional, pero recomendado)
+**2. Verificar el SHA-256** (opcional, pero recomendado). Sigue en la misma ventana:
+
+```powershell
 Invoke-WebRequest "$base/HSE-Catalogo.exe.sha256" -OutFile "$exe.sha256"
 $esperado = ((Get-Content "$exe.sha256" -Raw).Trim() -split '\s+')[0]
 $real = (Get-FileHash $exe -Algorithm SHA256).Hash.ToLower()
 if ($real -eq $esperado) { "OK: el archivo es el original" } else { "NO COINCIDE: no lo abras" }
+```
 
-# 3) Abrir la app
+**3. Abrir la app:**
+
+```powershell
 Start-Process $exe
 ```
 
@@ -243,44 +250,68 @@ Una Mac con **chip Apple (M1 o más nuevo)**. Las Mac con procesador **Intel** n
 1. Entra a la [última versión](https://github.com/coponico/hse-descargas/releases/latest) y descarga **HSE-Catalogo-mac.zip**.
 2. Haz doble clic para descomprimirlo.
 3. Arrastra **HSE Catalogo** a la carpeta **Aplicaciones**.
-4. La primera vez, ábrelo con **clic derecho → Abrir**. En macOS 15 o más nuevo, si no aparece **Abrir**, usa **Privacidad y seguridad → Abrir igualmente** (más abajo).
+4. Ábrela. macOS mostrará un aviso (es normal, no está notarizada por Apple): pulsa **Aceptar** (nunca «Trasladar a la Papelera»).
+5. Abre **Ajustes del Sistema → Privacidad y seguridad**, baja hasta **Seguridad** y pulsa **Abrir igualmente**.
+6. Escribe tu contraseña o usa Touch ID y pulsa **Abrir**.
+
+Más detalle en [abrir la app por primera vez](#abrir-mac).
 
 ¿Prefieres la Terminal? Mira [instalar por Terminal](#consola-mac).
 
 <a id="consola-mac"></a>
 ### ⌨️ Instalar por Terminal (opcional)
-Solo para **Macs con chip Apple (M1 o más nuevo)**. No hace falta instalar nada extra: usa **Terminal** y herramientas que ya trae macOS (`curl`, `shasum`, `ditto`). Abre **Terminal** (Spotlight → «Terminal») y pega esto:
+Solo para **Macs con chip Apple (M1 o más nuevo)**. No hace falta instalar nada extra: usa **Terminal** y herramientas que ya trae macOS (`curl`, `shasum`, `ditto`). Abre **Terminal** (Spotlight → «Terminal»). Pega cada bloque completo y pulsa Enter. La app se instala en tu carpeta personal `~/Applications`, que no pide permisos.
+
+**1. Comprobar el chip.** Debe decir `arm64`. Si dice `x86_64`, tu Mac es Intel y no está soportada:
 
 ```bash
-# 0) Comprobar el chip: debe decir arm64 (si dice x86_64, tu Mac es Intel y no está soportada)
 uname -m
+```
 
-# 1) Descargar la última versión
-cd ~/Downloads
+**2. Descargar la última versión** a tu carpeta Descargas:
+
+```bash
+cd "$HOME/Downloads"
 BASE="https://github.com/coponico/hse-descargas/releases/latest/download"
 curl -L -O "$BASE/HSE-Catalogo-mac.zip"
 curl -L -O "$BASE/HSE-Catalogo-mac.zip.sha256"
-
-# 2) Verificar el SHA-256 (opcional, pero recomendado): debe decir OK
-shasum -a 256 -c HSE-Catalogo-mac.zip.sha256
-
-# 3) Instalar en Aplicaciones y abrir
-rm -rf "/Applications/HSE Catalogo.app"
-ditto -x -k HSE-Catalogo-mac.zip /Applications
-open "/Applications/HSE Catalogo.app"
 ```
 
-Si el paso 2 dice **FAILED**, borra el zip y vuelve a descargarlo. Si tu usuario no puede escribir en Aplicaciones, escribe `sudo` antes de `rm` y de `ditto`.
+**3. Verificar el SHA-256** (opcional, pero recomendado). Debe decir `OK`:
 
-**Permiso de macOS.** Lo normal es que descargar con `curl` no marque el archivo como «bajado de internet», así que macOS suele abrir la app sin avisos. Si igual dice que no puede verificar al desarrollador (o si la bajaste con el navegador), ve a **Ajustes del Sistema → Privacidad y seguridad** y pulsa **Abrir igualmente**.
+```bash
+shasum -a 256 -c HSE-Catalogo-mac.zip.sha256
+```
+
+Si dice **FAILED**, borra el zip y vuelve a descargarlo.
+
+**4. Instalar y abrir:**
+
+```bash
+mkdir -p "$HOME/Applications"
+rm -rf "$HOME/Applications/HSE Catalogo.app"
+ditto -x -k "$HOME/Downloads/HSE-Catalogo-mac.zip" "$HOME/Applications"
+open "$HOME/Applications/HSE Catalogo.app"
+```
+
+Al abrir, macOS muestra un aviso. Es normal: sigue los pasos de [abrir la app por primera vez](#abrir-mac).
+
+> [!TIP]
+> Si prefieres no usar comandos para instalar, abre el zip en Finder y arrastra **HSE Catalogo** a **Aplicaciones**.
 
 > [!NOTE]
-> 🧪 **Todavía no probamos estos comandos en una Mac real.** Lo que sí está probado es el paquete: se arma, se firma y se abre en la compilación de GitHub. Si algo falla, avísanos en el Discord.
+> 🧪 **Probado en una Mac con chip Apple:** funcionaron la descarga, la verificación del SHA-256, la instalación en `~/Applications` y la apertura con el paso de Seguridad. Si algo falla, avísanos en el Discord.
 
-### Si la Mac no te deja abrirla
-Ve a **Ajustes del Sistema → Privacidad y seguridad** y pulsa **Abrir igualmente**.
+<a id="abrir-mac"></a>
+### 🔓 Abrir la app por primera vez (instalación normal)
+Al abrir la app, macOS dice: «No se ha abierto HSE Catalogo. Apple no ha podido verificar que HSE Catalogo no contenga software malicioso». **Es normal y pasa con cualquier forma de instalar** (navegador o Terminal): la app es gratuita y Apple no la ha notarizado, porque eso requiere una cuenta de desarrollador de pago. Este paso es parte de la instalación y solo se hace la primera vez:
 
-**¿Por qué pasa?** La app no está firmada con una cuenta de desarrollador de Apple, que es de pago. Es normal y solo se pide la primera vez.
+1. En el aviso, pulsa **Aceptar**. **Nunca** pulses «Trasladar a la Papelera».
+2. Abre **Ajustes del Sistema → Privacidad y seguridad**.
+3. Baja hasta **Seguridad** y pulsa **Abrir igualmente** (junto al aviso de HSE Catalogo).
+4. Escribe tu contraseña o usa Touch ID.
+5. Pulsa **Abrir**.
+
 
 <p align="center"><a href="#indice">⬆️ Volver al índice</a></p>
 
